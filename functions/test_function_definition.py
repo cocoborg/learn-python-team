@@ -132,3 +132,14 @@ def test_function_definition():
 
     # Test with name.
     assert greet_with_default("John") == "Hello, John"
+
+
+    # Function with input validation.
+    def validate_age(age):
+        if age < 0:
+            return "Invalid age"
+        return "Valid age"
+
+    # Test valid and invalid inputs.
+    assert validate_age(22) == "Valid age"
+    assert validate_age(-2) == "Invalid age"

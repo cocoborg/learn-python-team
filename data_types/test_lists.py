@@ -286,6 +286,14 @@ def test_list_comprehensions():
     flatten_vector = [num for elem in vector for num in elem]
     assert flatten_vector == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+
+    #------------------------------------------LIST COMPREHENSION TEST CASE----------------------------------------
+    #Create a list only of cars containing the letter 'r'
+    ocarlist = ["Subaru", "Range Rover", "Honda","Jeep", "Lamborghini", "Ferrari"]
+    premiumcarlist = [x for x in ocarlist if "r" in ocarlist]
+    #verify that list is correct then print
+    assert premiumcarlist == ["Subaru", "Range Rover", "Lamborghini", "Ferrari"]
+    print(premiumcarlist)
    
 
    

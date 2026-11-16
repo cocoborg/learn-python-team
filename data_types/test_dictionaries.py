@@ -100,3 +100,24 @@ def test_dictionary_absence():
     # displaying an error when checking for an absent entry
     with pytest.raises(KeyError):
         boulder_dictionary['blue']
+
+
+# updating an entry in a dictionary
+def test_dictionary_updating():
+    """Updating entries from a dictionary"""
+
+    track_dictionary = {
+        'storygraph': 'books',
+        'letterboxd': 'films',
+        'serializd': 'tv shows',
+    }
+
+    # update() method updates the dictionary with the key-value pair
+    # and add the new entry if the key is not present in the dictionary
+    track_dictionary.update({'lastfm': 'music', 'letterboxd': 'movies'})
+
+    assert track_dictionary['storygraph'] == 'books'
+    assert track_dictionary['letterboxd'] == 'movies'
+    assert track_dictionary['lastfm'] == 'music'
+    # checking the length of the dictionary after updating it
+    assert len(track_dictionary) == 4

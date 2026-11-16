@@ -19,6 +19,7 @@ keys are unique (within one dictionary). A pair of braces creates an empty dicti
 Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs
 to the dictionary; this is also the way dictionaries are written on output.
 """
+import pytest
 
 
 def test_dictionary():
@@ -77,3 +78,25 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+# if an entry is absent from the dictionary
+def test_dictionary_absence():
+    """Behavior when a key is missing from a dictionary"""
+
+    boulder_dictionary = {
+        'yellow': 'intro',
+        'orange': 'intro moderate',
+        'green': 'moderate',
+    }
+
+    # get() method returns None when the key is absent
+    assert boulder_dictionary.get('blue') is None
+
+    # get() method returns the value of the key when it is given
+    assert boulder_dictionary.get('blue', 'tricky') == 'tricky'
+    assert 'blue' not in boulder_dictionary
+
+    # displaying an error when checking for an absent entry
+    with pytest.raises(KeyError):
+        boulder_dictionary['blue']

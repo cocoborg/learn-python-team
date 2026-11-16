@@ -121,3 +121,14 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+    
+    # Function with a default parameter.
+    def greet_with_default(name="Guest"):
+        return "Hello, " + name
+
+    # Test default parameter.
+    assert greet_with_default() == "Hello, Guest"
+
+    # Test with name.
+    assert greet_with_default("John") == "Hello, John"

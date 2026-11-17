@@ -26,3 +26,15 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+    def test_nested_conditions():
+        grade = 50
+        enrolled = True
+        if grade >= 50:
+            if enrolled:
+                result = 'Passed'
+            else:
+                result = 'Not enrolled'
+        else:
+            result = 'Failed'
+        assert result == 'Passed'

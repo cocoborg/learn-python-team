@@ -38,3 +38,19 @@ def test_if_statement():
         else:
             result = 'Failed'
         assert result == 'Passed'
+
+    def test_multiple_elif_branches():
+        def grade(score):
+            if score >= 90:
+                return 'A'
+            elif score >= 80:
+                return 'B'
+            elif score >= 70:
+                return 'C'
+            else:
+                return 'F'
+
+        assert grade(98) == 'A'
+        assert grade(82) == 'B'
+        assert grade(76) == 'C'
+        assert grade(39) == 'F'

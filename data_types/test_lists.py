@@ -290,7 +290,7 @@ def test_list_comprehensions():
     #------------------------------------------LIST COMPREHENSION TEST CASE----------------------------------------
     #Create a list only of cars containing the letter 'r'
     ocarlist = ["Subaru", "Range Rover", "Honda","Jeep", "Lamborghini", "Ferrari"]
-    premiumcarlist = [x for x in ocarlist if "r" in ocarlist]
+    premiumcarlist = [x for x in ocarlist if "r" in x]
     #verify that list is correct then print
     assert premiumcarlist == ["Subaru", "Range Rover", "Lamborghini", "Ferrari"]
     print(premiumcarlist)

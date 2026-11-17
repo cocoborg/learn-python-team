@@ -80,7 +80,7 @@ def test_list_type():
 def test_list_methods():
     """Test list methods."""
 
-    fruits = ['orange', 'apple', 'pear', 'kiwi', 'banana', 'apple', 'banana']
+    fruits = ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
 
     # list.append(x)
     # Add an item to the end of the list.
@@ -91,7 +91,7 @@ def test_list_methods():
     # list.remove(x)
     # Remove the first item from the list whose value is equal to x.
     # It raises a ValueError if there is no such item.
-    fruits.remove('grape')
+    fruits.remove('peach')
     assert fruits == ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
 
     with pytest.raises(Exception):

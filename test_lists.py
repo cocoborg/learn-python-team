@@ -50,6 +50,7 @@ def test_list_type():
     cubes.append(7 ** 3)  # and the cube of 7
     assert cubes == [1, 8, 27, 64, 125, 216, 343]
 
+
     # Assignment to slices is also possible, and this can even change the size
     # of the list or clear it entirely:
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
@@ -60,6 +61,9 @@ def test_list_type():
     # clear the list by replacing all the elements with an empty list
     letters[:] = []
     assert letters == []
+
+    
+
 
     # The built-in function len() also applies to lists
     letters = ['a', 'b', 'c', 'd']
@@ -140,6 +144,8 @@ def test_list_methods():
         'grape',
     ]
 
+
+#sorting
     # list.sort(key=None, reverse=False)
     # Sort the items of the list in place (the arguments can be used for sort customization,
     # see sorted() for their explanation).
@@ -197,7 +203,7 @@ def test_del_statement():
         # value is assigned to it).
         assert numbers == []  # noqa: F821
 
-
+#list comprehensions
 def test_list_comprehensions():
     """List Comprehensions.
 
@@ -253,6 +259,7 @@ def test_list_comprehensions():
     doubled_vector = [x * 2 for x in vector]
     assert doubled_vector == [-8, -4, 0, 4, 8]
 
+#-------------------list filtering-----------
     # Filter the list to exclude negative numbers.
     positive_vector = [x for x in vector if x >= 0]
     assert positive_vector == [0, 2, 4]
@@ -274,6 +281,7 @@ def test_list_comprehensions():
     vector = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     flatten_vector = [num for elem in vector for num in elem]
     assert flatten_vector == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 
 
 def test_nested_list_comprehensions():

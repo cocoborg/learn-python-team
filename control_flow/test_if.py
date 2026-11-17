@@ -20,8 +20,8 @@ def test_if_statement():
         conclusion = 'Number is less than zero'
     elif number == 0:
         conclusion = 'Number equals to zero'
-    elif number < 1:
-        conclusion = 'Number is greater than zero but less than one'
+    elif number < 13:
+        conclusion = 'Number is greater than zero but less than thirteen'
     else:
         conclusion = 'Number bigger than or equal to one'
 

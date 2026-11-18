@@ -20,12 +20,14 @@ def test_if_statement():
         conclusion = 'Number is less than zero'
     elif number == 0:
         conclusion = 'Number equals to zero'
-    elif number < 1:
+    elif 0 < number < 1:
         conclusion = 'Number is greater than zero but less than one'
+    elif number < 13:
+        conclusion = 'Number is greater than or equal to one but less than thirteen'
     else:
-        conclusion = 'Number bigger than or equal to one'
+        conclusion = 'Number bigger than or equal to thirteen'
 
-    assert conclusion == 'Number bigger than or equal to one'
+    assert conclusion == 'Number bigger than or equal to thirteen'
 
 def test_nested_conditions():
     grade = 50

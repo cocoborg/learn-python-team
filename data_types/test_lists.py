@@ -61,6 +61,8 @@ def test_list_type():
     letters[:] = []
     assert letters == []
 
+    
+
     # The built-in function len() also applies to lists
     letters = ['a', 'b', 'c', 'd']
     assert len(letters) == 4
@@ -84,12 +86,14 @@ def test_list_methods():
     # Add an item to the end of the list.
     # Equivalent to a[len(a):] = [x].
     fruits.append('dragon fruit')
-    assert fruits == ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana', 'dragon fruit']
+    fruits.append('peach')
+    assert fruits == ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana','dragon fruit', 'peach']
 
     # list.remove(x)
     # Remove the first item from the list whose value is equal to x.
     # It raises a ValueError if there is no such item.
     fruits.remove('dragon fruit')
+    fruits.remove('peach')
     assert fruits == ['orange', 'apple', 'pear', 'banana', 'kiwi', 'apple', 'banana']
 
     with pytest.raises(Exception):
@@ -154,6 +158,15 @@ def test_list_methods():
         'orange',
         'pear',
     ]
+
+
+    #------------------------------------------PYTHON LIST SORT OPERATION TEST CASE--------------------------------------------
+    carlist = ["Bentley", "Volkswagen", "Lexus", "Lamborghini", "Alfa Romeo", "Cadillac"]
+    carlist.sort()
+    #verify that list is sorted, then print
+    assert carlist == ["Alfa Romeo", "Bentley", "Cadillac", "Lamborghini", "Lexus", "Volkswagen"]
+    print(carlist)
+
 
     # list.pop([i])
     # Remove the item at the given position in the list, and return it. If no index is specified,
@@ -274,6 +287,18 @@ def test_list_comprehensions():
     vector = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     flatten_vector = [num for elem in vector for num in elem]
     assert flatten_vector == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+    #------------------------------------------LIST COMPREHENSION TEST CASE----------------------------------------
+    #Create a list only of cars containing the letter 'r'
+    ocarlist = ["Subaru", "Range Rover", "Honda","Jeep", "Lamborghini", "Ferrari"]
+    premiumcarlist = [x for x in ocarlist if "r" in x]
+    #verify that list is correct then print
+    assert premiumcarlist == ["Subaru", "Range Rover", "Lamborghini", "Ferrari"]
+    print(premiumcarlist)
+   
+
+   
 
 
 def test_nested_list_comprehensions():
